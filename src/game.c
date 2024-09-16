@@ -171,11 +171,13 @@ static void dealerPlay(Actor *dealer, Card *cards, uint16_t nCards)
             printf("The dealer drew the %s and has %d points\n",
                    stringifyCard(&dealer->cards[dealer->n_cards - 1]),
                    dealer->points);
+        else
+            printf("%s\ndealer: %d\n",
+                   stringifyCard(&dealer->cards[dealer->n_cards - 1]),
+                   dealer->points);
     }
 
-    if (!Options.verbose)
-        printf("dealer: %d\n", dealer->points);
-    else
+    if (Options.verbose)
         printf("The dealer stopped drawing with %d points\n", dealer->points);
 }
 
@@ -206,8 +208,7 @@ int startRound(Card *cards, uint32_t nCards)
     Card *current = &player.cards[player.n_cards - 1];
 
     if (!Options.verbose)
-        printf("%s %d\n", stringifyCard(current),
-               player.points);
+        printf("%s\nplayer: %d\n", stringifyCard(current), player.points);
     else
         printf("You drew the %s\n%d points\n", stringifyCard(current),
                player.points);
@@ -215,7 +216,7 @@ int startRound(Card *cards, uint32_t nCards)
     drawCard(&dealer, cards, nCards);
     current = &dealer.cards[dealer.n_cards - 1];
     if (!Options.verbose)
-        printf("dealer: %d\n", dealer.points);
+        printf("%s\ndealer: %d\n", stringifyCard(current), dealer.points);
     else
         printf("The dealer drew the %s\n%d points\n", stringifyCard(current),
                dealer.points);
@@ -223,16 +224,13 @@ int startRound(Card *cards, uint32_t nCards)
     drawCard(&player, cards, nCards);
     current = &player.cards[player.n_cards - 1];
     if (!Options.verbose)
-        printf("%s %d\n", stringifyCard(current),
-               player.points);
+        printf("%s\nplayer: %d\n", stringifyCard(current), player.points);
     else
         printf("You drew the %s\n%d points\n", stringifyCard(current),
                player.points);
 
     drawCard(&dealer, cards, nCards);
-    if (!Options.verbose)
-        printf("dealer: %d\n", dealer.points);
-    else
+    if (Options.verbose)
         printf("The dealer drew his second card, and placed it face down\n");
 
     char *line = NULL;
