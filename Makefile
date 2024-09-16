@@ -2,7 +2,7 @@ CC := clang
 
 OPT := -O3
 
-BINARY := Blackjack
+BINARY := blackjack
 
 # OS detection and setting of DEL command
 NAME := $(BINARY)
@@ -15,7 +15,7 @@ $(shell mkdir -p bin/debug)
 
 DEB = -g3 -O0
 
-CFLAGS = -Wall -Wextra -Werror -std=c23 -finline-functions -march=native -Wno-unused-parameter
+CFLAGS = -Wall -Wextra -Werror -std=gnu2x -finline-functions -march=native -Wno-unused-parameter
 CFLAGS += $(OPT)
 
 HDR = hdr

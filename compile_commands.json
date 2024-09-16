@@ -1,0 +1,46 @@
+[
+  {
+    "arguments": [
+      "/usr/bin/clang",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-std=gnu2x",
+      "-finline-functions",
+      "-march=native",
+      "-Wno-unused-parameter",
+      "-O3",
+      "-I",
+      "hdr",
+      "-c",
+      "-o",
+      "bin/release/game.o",
+      "src/game.c"
+    ],
+    "directory": "/home/tim/Programming/languages/C/blackjack",
+    "file": "/home/tim/Programming/languages/C/blackjack/src/game.c",
+    "output": "/home/tim/Programming/languages/C/blackjack/bin/release/game.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/clang",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-std=gnu2x",
+      "-finline-functions",
+      "-march=native",
+      "-Wno-unused-parameter",
+      "-O3",
+      "-I",
+      "hdr",
+      "-c",
+      "-o",
+      "bin/release/main.o",
+      "src/main.c"
+    ],
+    "directory": "/home/tim/Programming/languages/C/blackjack",
+    "file": "/home/tim/Programming/languages/C/blackjack/src/main.c",
+    "output": "/home/tim/Programming/languages/C/blackjack/bin/release/main.o"
+  }
+]
