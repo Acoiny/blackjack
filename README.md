@@ -17,3 +17,5 @@ usage: blackjack [options]
     --print-cards   print all the cards in the deck
                     in a readable format
 ```
+NOTE: This project is not complete and probably has some flaws.
+Also, it doesn't comply 100% to the real blackjack rules.
